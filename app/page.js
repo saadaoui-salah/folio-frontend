@@ -1,4 +1,4 @@
-import { Post, PostForm } from "@/components";
+import { Post, PostForm, Suggestions } from "@/components";
 
 export default function Home() {
   return (
@@ -17,6 +17,10 @@ export default function Home() {
         <Post />
         <Post />
         <Post />
+      </section>
+      <section>
+        <Suggestions />
+        <Suggestions />
       </section>
     </>
   );
