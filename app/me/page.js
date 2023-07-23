@@ -1,3 +1,6 @@
+import { Post, PostForm, ProjectCard } from "@/components";
+import Followers from "@/components/Followers";
+
 export default function Me() {
   return (
     <>
