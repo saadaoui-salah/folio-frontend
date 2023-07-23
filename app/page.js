@@ -1,27 +1,11 @@
-import { Post, PostForm, Suggestions } from "@/components";
+import { PostSection, Suggestions } from "@/components";
 
 export default function Home() {
   return (
-    <>
-      <section>Home</section>
-      <section>
-        <PostForm />
-      </section>
-      <section>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-      </section>
-      <section>
-        <Suggestions />
-        <Suggestions />
-      </section>
-    </>
+    <div className="mt-10 flex items-start justify-evenly">
+      <Suggestions title={"Suggested Peoples"} />
+      <PostSection />
+      <Suggestions title={"Suggested Comunities"} />
+    </div>
   );
 }
