@@ -1,6 +1,6 @@
 export { default as Nav } from "./Nav";
 export { default as Footer } from "./Footer";
-export { default as Post } from "./Post";
+export { default as PostSection } from "./Post";
 export { default as JobHistory } from "./JobHistory";
 export { default as PostForm } from "./PostForm";
 export { default as ProjectCard } from "./ProjectCard";
