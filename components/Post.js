@@ -2,6 +2,36 @@
 import { useState } from "react";
 import PostForm from "./PostForm";
 
+const PostDropDown = () => {
+  return (
+    <div className="absolute w-48  bg-white right-4 top-12 rounded-md shadow-md">
+      <ul className="p-4 flex flex-col gap-2">
+        <li className="w-full hover:bg-slate-200 rounded-md px-2 py-[3px]">
+          <p>Hide Post</p>
+        </li>
+        <li className="w-full hover:bg-slate-200 rounded-md px-2 py-[3px]">
+          <p>Follow Poster</p>
+        </li>
+        <li className="w-full hover:bg-slate-200 rounded-md px-2 py-[3px]">
+          <p>Unfollow Poster</p>
+        </li>
+      </ul>
+    </div>
+  );
+};
+
+const PostActions = () => {
+  return (
+    <div className="flex items-center justify-between gap-4 mt-3">
+      <div className="flex gap-2">
+        <div className="rounded-full cursor-pointer bg-slate-300 w-6 h-6"></div>
+        <div className="rounded-full cursor-pointer bg-slate-300 w-6 h-6"></div>
+      </div>
+      <span className="rounded-full cursor-pointer bg-slate-300 w-6 h-6"></span>
+    </div>
+  );
+};
+
 const Post = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -21,32 +51,12 @@ const Post = () => {
           <span className="text-xl font-bold">.</span>
           <span className="text-xl font-bold">.</span>
           <span className="text-xl font-bold">.</span>
-          {open && (
-            <div className="absolute w-48 h-48 bg-white right-4 top-12 rounded-md shadow-md">
-              <ul className="p-4 flex flex-col gap-2">
-                <li className="w-full hover:bg-slate-200 rounded-md px-2 py-[3px]">
-                  <p>Hide Post</p>
-                </li>
-                <li className="w-full hover:bg-slate-200 rounded-md px-2 py-[3px]">
-                  <p>Follow Poster</p>
-                </li>
-                <li className="w-full hover:bg-slate-200 rounded-md px-2 py-[3px]">
-                  <p>Unfollow Poster</p>
-                </li>
-              </ul>
-            </div>
-          )}
+          {open && <PostDropDown />}
         </div>
       </div>
       <p className="mt-4">lorem </p>
       <div className="mt-2 rounded-md bg-slate-400 w-md min-h-[200px]"></div>
-      <div className="flex items-center justify-between gap-4 mt-3">
-        <div className="flex gap-2">
-          <div className="rounded-full cursor-pointer bg-slate-300 w-6 h-6"></div>
-          <div className="rounded-full cursor-pointer bg-slate-300 w-6 h-6"></div>
-        </div>
-        <span className="rounded-full cursor-pointer bg-slate-300 w-6 h-6"></span>
-      </div>
+      <PostActions />
     </div>
   );
 };
