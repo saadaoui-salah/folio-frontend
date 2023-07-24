@@ -1,18 +1,20 @@
 "use client";
 import { useState } from "react";
 import PostForm from "./PostForm";
+import { EyeSlash } from "./Icons";
 
 const PostDropDown = () => {
   return (
     <div className="absolute w-48  bg-white right-4 top-12 rounded-md shadow-md">
       <ul className="p-4 flex flex-col gap-2">
-        <li className="w-full hover:bg-slate-200 rounded-md px-2 py-[3px]">
+        <li className="w-full flex items-center gap-2 hover:bg-slate-200 rounded-md px-2 py-[3px]">
+          <EyeSlash />
           <p>Hide Post</p>
         </li>
-        <li className="w-full hover:bg-slate-200 rounded-md px-2 py-[3px]">
+        <li className="w-full flex hover:bg-slate-200 rounded-md px-2 py-[3px]">
           <p>Follow Poster</p>
         </li>
-        <li className="w-full hover:bg-slate-200 rounded-md px-2 py-[3px]">
+        <li className="w-full flex hover:bg-slate-200 rounded-md px-2 py-[3px]">
           <p>Unfollow Poster</p>
         </li>
       </ul>

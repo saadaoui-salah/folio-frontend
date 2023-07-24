@@ -9,7 +9,7 @@ const PostForm = () => {
       </div>
       <textarea
         placeholder="Share post ..."
-        className="p-2 w-full border-b min-h-24 max-h-24 border-slate-400 bg-transparent"
+        className="p-2 w-full border-b h-28 border-slate-400 bg-transparent"
       ></textarea>
       <div className="px-3 py-2 flex gap-4 flex-wrap">
         <div className="relative">
