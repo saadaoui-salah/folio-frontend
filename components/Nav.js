@@ -1,14 +1,13 @@
 "use client";
-
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
-import { AuthButtons, MobileMenuButtons, ProfileButoon } from "./Buttons";
+import { AuthButtons, ProfileButoon } from "./Buttons";
 import { NotificationIcon } from "./Icons";
 
 const Logo = () => {
   return (
-    <div className="font-bold text-3xl flex items-end">
-      Folio
+    <div className="font-bold select-none text-3xl flex items-end">
+      folio
       <div className="font-bold text-4xl mx-[6px] px-1 py-1 mb-[5px] rounded-full bg-green-300"></div>
     </div>
   );
@@ -56,7 +55,7 @@ const DropDownMenu = ({ Icon, children }) => {
 
 const Nav = () => {
   return (
-    <nav className="bg-white">
+    <nav className="bg-white shadow-slate-200 border-b shadow-md fixed w-full top-0 z-50">
       <div className="mx-auto max-w-full px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           {/*Mobile menu button */}
