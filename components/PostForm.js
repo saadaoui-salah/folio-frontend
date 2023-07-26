@@ -1,8 +1,9 @@
+import Image from "next/image";
 import { XIcon } from "./Icons";
 
 const PostForm = () => {
   return (
-    <div className="md:w-[500px] w-[400px] border border-slate-400 rounded-md">
+    <form className="md:w-[500px] bg-white w-[400px] border border-slate-300 rounded-md">
       <div className="p-2 flex items-center gap-4 border-b border-slate-400">
         <img className="bg-slate-400 w-10 h-10 rounded-full" />
         <p className="font-bold">User Name</p>
@@ -13,7 +14,7 @@ const PostForm = () => {
       ></textarea>
       <div className="px-3 py-2 flex gap-4 flex-wrap">
         <div className="relative">
-          <img className="bg-slate-300 w-16 h-16" />
+          <img className="rounded-md bg-slate-300 w-16 h-16" />
           <button className="cursor-pointer absolute top-1 right-1 rounded-full bg-red-200 p-1">
             <XIcon />
           </button>
@@ -23,7 +24,7 @@ const PostForm = () => {
         <button className="px-2 py-1">Upload</button>
         <button className="px-2 py-1">share</button>
       </div>
-    </div>
+    </form>
   );
 };
 export default PostForm;

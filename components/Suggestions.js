@@ -38,8 +38,8 @@ export const SuggestionsLoading = () => {
 
 const Suggestions = ({ title }) => {
   return (
-    <div className="flex lg:w-[400px] border-slate-300 max-md:w-[200px] max-sm:hidden flex-col gap-3 border rounded-md p-4">
-      <h1 className="text-lg font-bold">{title}</h1>
+    <div className="flex bg-white lg:w-[400px] border-slate-300 max-md:w-[200px] max-sm:hidden flex-col gap-3 border rounded-md p-4">
+      <h1 className="text-lg font-bold mb-3">{title}</h1>
       <SuggestionItem />
       <SuggestionItem />
       <SuggestionItem />
