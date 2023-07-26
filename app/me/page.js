@@ -1,34 +1,16 @@
-import { Post, PostForm, ProjectCard } from "@/components";
-import Followers from "@/components/Followers";
+import { GroupOfCards, Info, PostSection } from "@/components";
 
 export default function Me() {
   return (
     <>
-      <section>Home</section>
-      <section>
-        <PostForm />
-      </section>
-      <section>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-      </section>
-      <section>
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-      </section>
-      <Followers />
+      <Info />
+      <div className="flex justify-evenly flex-wrap mt-16">
+        <div className=" px-4">
+          <GroupOfCards title="Followers" link="/followers" />
+          <GroupOfCards title="Projects" link="/projects" />
+        </div>
+        <PostSection />
+      </div>
     </>
   );
 }
