@@ -1,24 +1,50 @@
 "use client";
-import { useState } from "react";
-import PostForm from "./PostForm";
+import { useEffect, useRef, useState } from "react";
 import { EyeSlash } from "./Icons";
+import PostForm from "./PostForm";
 
 const PostDropDown = () => {
+  const [open, setOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOpen(false);
+        document.removeEventListener("click", () => "");
+        console.log("eeee");
+      }
+    }
+
+    document.addEventListener("click", (e) => handleClickOutside(e));
+  }, []);
   return (
-    <div className="absolute w-48  bg-white right-4 top-12 rounded-md shadow-md">
-      <ul className="p-4 flex flex-col gap-2">
-        <li className="w-full flex items-center gap-2 hover:bg-slate-200 rounded-md px-2 py-[3px]">
-          <EyeSlash />
-          <p>Hide Post</p>
-        </li>
-        <li className="w-full flex hover:bg-slate-200 rounded-md px-2 py-[3px]">
-          <p>Follow Poster</p>
-        </li>
-        <li className="w-full flex hover:bg-slate-200 rounded-md px-2 py-[3px]">
-          <p>Unfollow Poster</p>
-        </li>
-      </ul>
-    </div>
+    <>
+      <div
+        ref={dropdownRef}
+        onClick={() => setOpen(!open)}
+        className="flex items-center rounded-full cursor-pointer"
+      >
+        <span className="text-xl font-bold">.</span>
+        <span className="text-xl font-bold">.</span>
+        <span className="text-xl font-bold">.</span>
+        {open && (
+          <div className="absolute w-48  bg-white right-4 top-12 rounded-md shadow-md">
+            <ul className="p-4 flex flex-col gap-2">
+              <li className="w-full flex items-center gap-2 hover:bg-slate-200 rounded-md px-2 py-[3px]">
+                <EyeSlash />
+                <p>Hide Post</p>
+              </li>
+              <li className="w-full flex hover:bg-slate-200 rounded-md px-2 py-[3px]">
+                <p>Follow Poster</p>
+              </li>
+              <li className="w-full flex hover:bg-slate-200 rounded-md px-2 py-[3px]">
+                <p>Unfollow Poster</p>
+              </li>
+            </ul>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
@@ -35,26 +61,25 @@ const PostActions = () => {
 };
 
 const Post = () => {
-  const [open, setOpen] = useState(false);
   return (
-    <div className="border hover:shadow-md md:w-[500px] shadow-sm relative border-slate-300 rounded-md w-[400px] p-3">
+    <div className="border hover:shadow-md md:w-[500px] lg:w-[700px] shadow-sm relative border-slate-300 rounded-md w-[400px] p-3">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <img className="rounded-full bg-slate-400 w-10 h-10" />
           <div>
-            <p className="font-bold mx-3">User Name</p>
+            <div className="flex items-center">
+              <p className="font-bold mx-3 cursor-pointer hover:text-blue-600 hover:underline hover:underline-offset-4">
+                User Name
+              </p>
+              <span className="px-2 py-1 mt-[1px] font-bold bg-slate-300 bg-opacity-80 rounded-md text-sm select-none">
+                Admin
+              </span>
+            </div>
             <p className="text-sm mx-3 font-light">22, may 2022</p>
           </div>
         </div>
-        <div
-          onClick={() => setOpen(!open)}
-          className="flex items-center rounded-full cursor-pointer"
-        >
-          <span className="text-xl font-bold">.</span>
-          <span className="text-xl font-bold">.</span>
-          <span className="text-xl font-bold">.</span>
-          {open && <PostDropDown />}
-        </div>
+
+        <PostDropDown />
       </div>
       <p className="mt-4">lorem </p>
       <div className="mt-2 rounded-md bg-slate-400 w-md min-h-[200px]"></div>
@@ -109,7 +134,7 @@ export const PostSectionLoading = () => {
 
 const PostSection = () => {
   return (
-    <section className="flex flex-col gap-4 my-4 px-3 items-center">
+    <section className="flex flex-col gap-4 px-3 mb-8 items-center">
       <PostForm />
       {Array(5)
         .fill(0)
