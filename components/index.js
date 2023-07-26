@@ -8,3 +8,5 @@ export { default as Suggestions } from "./Suggestions";
 export { default as PopUp } from "./PopUp";
 export { default as Item } from "./Item";
 export { default as Input } from "./Input";
+export { default as GroupOfCards } from "./Card";
+export { default as Info } from "./Info";
