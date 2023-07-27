@@ -10,12 +10,13 @@ const PostDropDown = () => {
     function handleClickOutside(event) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setOpen(false);
-        document.removeEventListener("click", () => "");
+        document.removeEventListener("click", () => {});
         console.log("eeee");
       }
     }
 
     document.addEventListener("click", (e) => handleClickOutside(e));
+    return () => document.removeEventListener("click", () => {});
   }, []);
   return (
     <>
@@ -50,12 +51,12 @@ const PostDropDown = () => {
 
 const PostActions = () => {
   return (
-    <div className="flex items-center justify-between gap-4 mt-3">
+    <div className="flex items-center justify-between gap-4 mt-3 py-2">
       <div className="flex gap-2">
-        <div className="rounded-full cursor-pointer bg-slate-300 w-6 h-6"></div>
-        <div className="rounded-full cursor-pointer bg-slate-300 w-6 h-6"></div>
+        <div className="rounded-full cursor-pointer bg-slate-300 w-10 h-10"></div>
+        <div className="rounded-full cursor-pointer bg-slate-300 w-10 h-10"></div>
       </div>
-      <span className="rounded-full cursor-pointer bg-slate-300 w-6 h-6"></span>
+      <span className="rounded-full cursor-pointer bg-slate-300 w-10 h-10"></span>
     </div>
   );
 };
@@ -81,7 +82,7 @@ const Post = () => {
         <PostDropDown />
       </div>
       <p className="mt-4">lorem </p>
-      <div className="mt-2 rounded-md bg-slate-400 w-md h-[400px]"></div>
+      <div className="mt-2 rounded-md bg-slate-400 h-[400px] max-sm:h-[300px]"></div>
       <PostActions />
     </div>
   );
