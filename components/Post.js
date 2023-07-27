@@ -78,11 +78,10 @@ const Post = () => {
             <p className="text-sm mx-3 font-light">22, may 2022</p>
           </div>
         </div>
-
         <PostDropDown />
       </div>
       <p className="mt-4">lorem </p>
-      <div className="mt-2 rounded-md bg-slate-400 w-md min-h-[200px]"></div>
+      <div className="mt-2 rounded-md bg-slate-400 w-md h-[400px]"></div>
       <PostActions />
     </div>
   );
