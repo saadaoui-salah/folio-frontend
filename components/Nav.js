@@ -6,10 +6,11 @@ import { NotificationIcon } from "./Icons";
 
 const Logo = () => {
   return (
-    <div className="font-bold select-none text-3xl flex items-end">
-      folio
-      <div className="font-bold text-4xl mx-[6px] px-1 py-1 mb-[5px] rounded-full bg-green-300"></div>
-    </div>
+    <Link href="/" className="p-2 h-full bg-green-300 rounded-md">
+      <div className="font-bold select-none text-3xl px-2 flex items-end">
+        folio
+      </div>
+    </Link>
   );
 };
 
