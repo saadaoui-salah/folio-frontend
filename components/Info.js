@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const Info = () => {
   const [edit, setEdit] = useState(false);
+  const [fullName, setFullName] = useState("User Name");
   const handleEdit = () => {
     setEdit(!edit);
   };
@@ -15,9 +16,15 @@ const Info = () => {
         <div className="flex items-center justify-start w-full px-8">
           <img className="w-[110px] h-[110px] mt-[-40px] rounded-full max-sm:h-[100px] bg-green-200 mx-6" />
           <div className="flex items-center gap-6">
-            <h1 contentEditable={edit} className="text-[24px] ">
-              User Name
-            </h1>
+            {edit ? (
+              <input
+                className="bg-transparent text-[24px] w-[150px] border rounded-md px-2 border-blue-600"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+              />
+            ) : (
+              <h1 className="text-[24px] px-2">{fullName}</h1>
+            )}
             <div
               onClick={handleEdit}
               className="w-8 h-8 cursor-pointer bg-slate-300 rounded-full"
