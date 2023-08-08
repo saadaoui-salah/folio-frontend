@@ -37,31 +37,31 @@ const Info = () => {
       <div className="border-b-2 py-2 w-full flex flex-row gap-2 items-center px-6 justify-center">
         <Link
           className="text-[17px] px-4 py-1 hover:bg-slate-200 font-semibold rounded-md "
-          href="/followers"
+          href="/me/followers"
         >
           Followers
         </Link>
         <Link
           className="text-[17px] px-4 py-1 hover:bg-slate-200 font-semibold rounded-md "
-          href="/projects"
+          href="/me/projects"
         >
           Projects
         </Link>
         <Link
           className="text-[17px] px-4 py-1 hover:bg-slate-200 font-semibold rounded-md "
-          href="/communites"
+          href="/me/communites"
         >
           Communities
         </Link>
         <Link
           className="text-[17px] px-4 py-1 hover:bg-slate-200 font-semibold rounded-md "
-          href="/gallery"
+          href="/me/gallery"
         >
           Gallery
         </Link>
         <Link
           className="text-[17px] px-4 py-1 hover:bg-slate-200 font-semibold rounded-md "
-          href="/settings"
+          href="/me/settings"
         >
           Settings
         </Link>
