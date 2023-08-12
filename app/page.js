@@ -1,6 +1,25 @@
 import { PostSection, Suggestions } from "@/components";
+import { gql } from "@apollo/client";
+import client from "@/roupi/apolloClient";
 
-export default function Home() {
+export const fetchPosts = async () => {
+    const { data } = await client.query({
+      query: gql`
+query data {
+    allPosts{
+      content
+    }
+  
+  }
+      `,
+    });
+
+    return data
+}
+
+
+export default async function Home() {
+  const data = await fetchPosts()
   return (
     <div className="flex items-start justify-center gap-8">
       <Suggestions title={"Suggested Peoples"} />
